@@ -183,7 +183,6 @@ local function createObject(item)
     lib.requestModel(item.model, 1000)
     local Object = CreateObject(item.model, 0.0, 0.0, 0.0, false, false, false)
     SetModelAsNoLongerNeeded(item.model)
-
     return Object
 end
 
@@ -196,7 +195,7 @@ local function createWeapon(item)
         local hasLuxeMod, components, hadClip = Utils.getWeaponComponents(item.name, hash, item.components)
 
         if hasLuxeMod then
-            lib.requestModel(hasLuxeMod, 500)
+            lib.requestModel(hasLuxeMod, 10000)
         end
 
         local showDefault = true
